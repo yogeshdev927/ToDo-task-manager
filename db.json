@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": "5dbb",
+      "user_id": "vishu123",
+      "user_name": "vishu",
+      "password": "Vishu@123",
+      "email": "vishuynr@gmail.com"
+    },
+    {
+      "id": "4fb3",
+      "user_id": "yogi123",
+      "user_name": "Yogesh Saini",
+      "password": "Yogi@123",
+      "email": "vishuynr@gmail.com"
+    }
+  ],
+  "appointments": []
+}
