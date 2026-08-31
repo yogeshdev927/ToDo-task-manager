@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { useEffect } from "react";
 import { TodoLogin } from "./to-doLogin";
 import { TodoRegister } from "./to-doRegister";
+import todoimg from "../todoimg.jpg";
 
 export function TodoHome(){
     useEffect(()=>{
@@ -21,7 +22,7 @@ return(
                     <br />and Appointments
                 </div>
                 <div>
-                    <img src="src/todoimg.jpg" width='450px' height='450px' />
+                    <img src={todoimg} alt="Todo tasks" width='450px' height='450px' />
                 </div>
             </div>
             <div className="col">
