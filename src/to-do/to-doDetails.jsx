@@ -39,7 +39,7 @@ export function TodoDetails(){
     },[dateFilteredAppointments, sortAscending])
 
     const LoadAppointments = useCallback(()=>{
-        axios.get('http://localhost:3000/appointments').then(response=>{
+        axios.get('https://todo-task-manager-gtsf.onrender.com/appointments').then(response=>{
             setAppointments(response.data);
         })
     },[])

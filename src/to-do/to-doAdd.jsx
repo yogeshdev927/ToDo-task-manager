@@ -19,7 +19,7 @@ export function ToDoAdd(){
                 alert('Please enter a title');
                 return;
             }
-            axios.post(`http://localhost:3000/appointments`, appointment)
+            axios.post(`https://todo-task-manager-gtsf.onrender.com/appointments`, appointment)
             .then(()=>{
                 alert('Appointment added successfully..');
                 navigate('/dashboard');

@@ -6,7 +6,7 @@ export function ToDoCalendar(){
     const [appointments, setAppointments] = useState([]);
     const [cookies] = useCookies(['userid']);
     useEffect(()=>{
-        axios.get('http://localhost:3000/appointments')
+        axios.get('https://todo-task-manager-gtsf.onrender.com/appointments')
         .then(response=>{
             setAppointments(response.data);
         })

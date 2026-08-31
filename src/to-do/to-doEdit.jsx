@@ -10,7 +10,7 @@ export function ToDoEdit(){
     let params = useParams();
 
     function LoadAppointment(){
-        axios.get(`http://localhost:3000/appointments/${params.id}`)
+        axios.get(`https://todo-task-manager-gtsf.onrender.com/appointments/${params.id}`)
         .then(response=>{
              setAppointment(response.data);
         })
@@ -29,7 +29,7 @@ export function ToDoEdit(){
              user_id: appointment.user_id
         },
         onSubmit: (updatedAppointment) => {
-            axios.put(`http://localhost:3000/appointments/${params.id}`, updatedAppointment)
+            axios.put(`https://todo-task-manager-gtsf.onrender.com/appointments/${params.id}`, updatedAppointment)
             .then(()=>{
                 alert('Appointment Updated..');
                 navigate('/dashboard');

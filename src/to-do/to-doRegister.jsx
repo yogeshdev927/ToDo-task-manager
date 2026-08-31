@@ -11,7 +11,7 @@ export function TodoRegister(props){
             email: ""
         },
         onSubmit: (user)=>{
-            axios.post(`http://localhost:3000/users`, user)
+            axios.post(`https://todo-task-manager-gtsf.onrender.com/users`, user)
             .then(()=>{
                 console.log('Registered');
             })

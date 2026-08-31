@@ -10,7 +10,7 @@ export function ToDoDelete(){
     const [appointment, setAppointment] = useState({id:null, user_id:null, title:null, description:null, date: ''});
 
     useEffect(()=>{
-         axios.get(`http://localhost:3000/appointments/${params.id}`)
+         axios.get(`https://todo-task-manager-gtsf.onrender.com/appointments/${params.id}`)
          .then(response=>{
               setAppointment(response.data);
          })
@@ -19,7 +19,7 @@ export function ToDoDelete(){
     function handleDeleteClick(){
         var confirmDelete = window.confirm('Are you sure?\nWant to Delete?');
         if(confirmDelete === true){
-            axios.delete(`http://localhost:3000/appointments/${params.id}`)
+            axios.delete(`https://todo-task-manager-gtsf.onrender.com/appointments/${params.id}`)
             .then(()=>{
                 navigate('/dashboard');
             })
