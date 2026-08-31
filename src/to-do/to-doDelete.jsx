@@ -2,14 +2,12 @@ import axios from "axios";
 import { useEffect, useState } from "react"
 import { Link, useNavigate, useParams } from "react-router-dom";
 
-
 export function ToDoDelete(){
-
 
     let params = useParams();
     let navigate = useNavigate();
 
-    const [appointment, setAppointment] = useState({id:null, user_id:null, title:null, description:null, date: Date()});
+    const [appointment, setAppointment] = useState({id:null, user_id:null, title:null, description:null, date: ''});
 
     useEffect(()=>{
          axios.get(`http://localhost:3000/appointments/${params.id}`)
@@ -19,11 +17,13 @@ export function ToDoDelete(){
     },[])
 
     function handleDeleteClick(){
-        var confirm = window.confirm('Are you sure?\nWant to Delete?');
-        if(confirm===true){
+        var confirmDelete = window.confirm('Are you sure?\nWant to Delete?');
+        if(confirmDelete === true){
             axios.delete(`http://localhost:3000/appointments/${params.id}`)
-            .then(()=>{console.log('deleted')});
-            navigate('/dashboard');
+            .then(()=>{
+                navigate('/dashboard');
+            })
+            .catch(err=> console.log(err));
         }
     }
 

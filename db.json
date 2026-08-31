@@ -15,5 +15,14 @@
       "email": "vishuynr@gmail.com"
     }
   ],
-  "appointments": []
+  "appointments": [
+    {
+      "id": "aa7e",
+      "title": "javascript tutorial",
+      "description": "this is the tutorial for javascript",
+      "date": "2026-08-12",
+      "category": "General",
+      "user_id": "yogi123"
+    }
+  ]
 }

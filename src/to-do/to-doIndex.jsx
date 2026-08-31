@@ -6,8 +6,11 @@ import { ToDoAdd } from "./to-doAdd";
 import { ToDoDelete } from "./to-doDelete";
 import { ToDoEdit } from "./to-doEdit";
 import { TodoDetails } from "./to-doDetails";
+import { ToDoCalendar } from "./to-doCalendar";
+import { ToDoCategories } from "./to-doCategories";
 import { lazy, Suspense } from "react";
 const TodoDashboard = lazy(()=> import('./to-doDashboard'));
+
 export function TodoIndex(){
 return(
     <div className="container-fluid p-0">
@@ -18,10 +21,10 @@ return(
                 <span>TASK MANAGER</span>
             </div>
             <div>
-                <button className="btn text-white me-3">Features</button>
-                <button className="btn text-white">Pricing</button>
-                <button className="btn text-white mx-3">About</button>
-                <button className="btn btn-light me-3">Get Started</button>
+                <a href="/#features" className="btn text-white me-3">Features</a>
+                <a href="/#pricing" className="btn text-white">Pricing</a>
+                <a href="/#about" className="btn text-white mx-3">About</a>
+                <Link to="/register" className="btn btn-light me-3">Get Started</Link>
             </div>
         </header>
         <section>
@@ -31,12 +34,14 @@ return(
                 <Route path="login" element={<TodoLogin />} />
                 <Route path="register" element={<TodoRegister />} />
                 <Route path="dashboard" element={<TodoDashboard />}>
-                  <Route path="" element={<TodoDetails />} />
-                  <Route path="details" element={<TodoDetails />} />
-                  <Route path="add" element={<ToDoAdd />} />
-                  <Route path="edit/:id" element={<ToDoEdit />} />
-                  <Route path="delete/:id" element={<ToDoDelete />} />
-                </Route> 
+                    <Route index element={<TodoDetails />} />
+                    <Route path="details" element={<TodoDetails />} />
+                    <Route path="add" element={<ToDoAdd />} />
+                    <Route path="edit/:id" element={<ToDoEdit />} />
+                    <Route path="delete/:id" element={<ToDoDelete />} />
+                    <Route path="calendar" element={<ToDoCalendar />} />
+                    <Route path="categories" element={<ToDoCategories />} />
+                </Route>
             </Routes>
             </Suspense>
         </section>
